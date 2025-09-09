@@ -1,5 +1,7 @@
 public class Assignment1Program1 {
 
+  static String userInput = ("");
+
   public static void main(String[] args) {
 
     System.out.println("NNNNNNN        NNNNN     BBBBBBBBBBBBBBBB");
@@ -13,6 +15,15 @@ public class Assignment1Program1 {
     System.out.println("NNNNNN     NNNNNNNNN     BBBBB        BBBBBB");
     System.out.println("NNNNNN      NNNNNNNN     BBBBBBBBBBBBBBBBB");
     System.out.println("NNNNNN       NNNNNNN     BBBBBBBBBBBBBBBB");
+
+    System.out.println("Please enter a 5-character string:");
+    userInput = System.console().readLine();
+
+    String changedInput = new StringBuilder(userInput)
+      .reverse()
+      .substring(1, userInput.length() - 1);
+
+    System.out.println(changedInput);
 
   }
 }
