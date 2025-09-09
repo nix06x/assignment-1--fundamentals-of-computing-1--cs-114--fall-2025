@@ -1,6 +1,6 @@
-public class Assignment1Program1 {
+import java.util.Random;
 
-  static String userInput = ("");
+public class Assignment1Program1 {
 
   public static void main(String[] args) {
 
@@ -17,13 +17,23 @@ public class Assignment1Program1 {
     System.out.println("NNNNNN       NNNNNNN     BBBBBBBBBBBBBBBB");
 
     System.out.println("Please enter a 5-character string:");
-    userInput = System.console().readLine();
+    String userInput = System.console().readLine();
 
     String changedInput = new StringBuilder(userInput)
       .reverse()
       .substring(1, userInput.length() - 1);
 
     System.out.println(changedInput);
+
+    System.out.println("Please enter a number in Fahrenheit:");
+
+    userInput = System.console().readLine();
+
+    float origTemp = Float.parseFloat(userInput);
+
+    float convertedTemp = ((origTemp - 32) * 0.555555556f);
+
+    System.out.println(Float.toString(convertedTemp));
 
   }
 }
