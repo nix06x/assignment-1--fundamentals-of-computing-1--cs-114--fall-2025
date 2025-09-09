@@ -35,5 +35,11 @@ public class Assignment1Program1 {
 
     System.out.println(Float.toString(convertedTemp));
 
+    Random random = new Random();
+
+    int randomNum = random.nextInt(16,384|32);
+
+    System.out.println("Random number generated. Continuing...");
+
   }
 }
