@@ -41,5 +41,7 @@ public class Assignment1Program1 {
 
     System.out.println("Random number generated. Continuing...");
 
+    System.out.println("Your new string is " + Float.toString(convertedTemp) + changedInput + Integer.toString(randomNum));
+
   }
 }
