@@ -1,4 +1,5 @@
 import java.util.Random;
+import java.util.Scanner;
 
 public class Assignment1Program1 {
 
@@ -16,8 +17,12 @@ public class Assignment1Program1 {
     System.out.println("NNNNNN      NNNNNNNN     BBBBBBBBBBBBBBBBB");
     System.out.println("NNNNNN       NNNNNNN     BBBBBBBBBBBBBBBB");
 
+    String userInput;
+    Scanner scan = new Scanner(System.in);
+
     System.out.println("Please enter a 5-character string:");
-    String userInput = System.console().readLine();
+
+    userInput = scan.nextLine();
 
     String changedInput = new StringBuilder(userInput)
       .reverse()
@@ -27,7 +32,7 @@ public class Assignment1Program1 {
 
     System.out.println("Please enter a number in Fahrenheit:");
 
-    userInput = System.console().readLine();
+    userInput = scan.nextLine();
 
     float origTemp = Float.parseFloat(userInput);
 
