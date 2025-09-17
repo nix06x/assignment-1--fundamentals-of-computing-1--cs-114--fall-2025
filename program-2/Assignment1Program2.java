@@ -6,29 +6,24 @@ public class Assignment1Program2 {
 
     System.out.println("Base Conversion Program");
 
-    String userInput;
     Scanner scan = new Scanner(System.in);
 
     System.out.println("Please enter a base (2–9):");
 
-    userInput = scan.nextLine();
-
-    final int BASE_NUM = (Integer.parseInt(userInput));
+    final int BASE_NUM = scan.nextInt();
     final int BASE_MAX = (BASE_NUM - 1);
 
-    double maxNumber = ((BASE_MAX * (Math.pow(BASE_NUM, 3))) + (BASE_MAX * (Math.pow(BASE_NUM, 2))) + (BASE_MAX * (Math.pow(BASE_NUM, 1))) + (BASE_MAX * (Math.pow(BASE_NUM, 0))));
+    int maxNumber = (int) ((BASE_MAX * (Math.pow(BASE_NUM, 3))) + (BASE_MAX * (Math.pow(BASE_NUM, 2))) + (BASE_MAX * (Math.pow(BASE_NUM, 1))) + (BASE_MAX * (Math.pow(BASE_NUM, 0))));
 
-    System.out.println("The maximum, 4-digit, base 10 number in base " + Integer.toString(BASE_NUM) + " is " + Double.toString(maxNumber) + ".");
+    System.out.println("The maximum, 4-digit, base 10 number in base " + Integer.toString(BASE_NUM) + " is " + Integer.toString(maxNumber) + ".");
 
-    System.out.println("Now, enter a base 10 number in the range 0 to " + Double.toString(maxNumber) + " to convert:");
+    System.out.println("Now, enter a base 10 number in the range 0 to " + Integer.toString(maxNumber) + " to convert:");
 
-    userInput = scan.nextLine();
-
-    scan.close();
-
-    int INPUT_NUM = (Integer.parseInt(userInput));
+    int INPUT_NUM = scan.nextInt();
     int quotient = 0;
     int remainder = 0;
+
+    scan.close();
 
     int digitOne = 0;
     int digitTen = 0;
@@ -40,32 +35,20 @@ public class Assignment1Program2 {
 
     digitOne = remainder;
 
-    if (remainder != 0){
+    remainder = (quotient % BASE_NUM);
+    quotient = (quotient / BASE_NUM);
 
-      remainder = (quotient % BASE_NUM);
-      quotient = (quotient / BASE_NUM);
+    digitTen = remainder;
 
-      digitTen = remainder;
+    remainder = (quotient % BASE_NUM);
+    quotient = (quotient / BASE_NUM);
 
-      if (remainder != 0){
+    digitHundred = remainder;
 
-        remainder = (quotient % BASE_NUM);
-        quotient = (quotient / BASE_NUM);
+    remainder = (quotient % BASE_NUM);
+    quotient = (quotient / BASE_NUM);
 
-        digitHundred = remainder;
-
-        if (remainder != 0){
-
-          remainder = (quotient % BASE_NUM);
-          quotient = (quotient / BASE_NUM);
-
-          digitThousand = remainder;
-
-        }
-
-      }
-
-    }
+    digitThousand = remainder;
 
     int convertedNum = ((digitThousand * 1000) + (digitHundred * 100) + (digitTen * 10) + (digitOne));
 
