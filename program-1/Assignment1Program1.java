@@ -24,6 +24,8 @@ public class Assignment1Program1 {
 
     userInput = scan.nextLine();
 
+    scan.close();
+
     String changedInput = new StringBuilder(userInput)
       .reverse()
       .substring(1, userInput.length() - 1);

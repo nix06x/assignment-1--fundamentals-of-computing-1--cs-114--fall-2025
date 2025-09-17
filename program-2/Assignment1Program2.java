@@ -18,9 +18,9 @@ public class Assignment1Program2 {
     final int BASE_NUM = (Integer.parseInt(userInput));
     final int BASE_MAX = (BASE_NUM - 1);
 
-    int maxNumber = ((BASE_MAX * (BASE_NUM ^ 3)) + (BASE_MAX * (BASE_NUM ^ 2)) + (BASE_MAX * (BASE_NUM ^ 1)) + (BASE_MAX * (BASE_NUM ^ 0)));
+    double maxNumber = ((BASE_MAX * (Math.pow(BASE_NUM, 3))) + (BASE_MAX * (Math.pow(BASE_NUM, 2))) + (BASE_MAX * (Math.pow(BASE_NUM, 1))) + (BASE_MAX * (Math.pow(BASE_NUM, 0))));
 
-    System.out.println("The maximum, 4-digit, base 10 number in base " + Integer.toString(BASE_NUM) + " is " + Integer.toString(maxNumber) + ".");
+    System.out.println("The maximum, 4-digit, base 10 number in base " + Integer.toString(BASE_NUM) + " is " + Double.toString(maxNumber) + ".");
 
   }
 }
